@@ -34,12 +34,6 @@ The container handles Wine setup, required Windows components, WebView2, Zwift i
 
 ## 🚀 Quick start
 
-### Build
-
-```bash
-./zwift build
-```
-
 ### Install
 
 ```bash
