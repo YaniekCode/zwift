@@ -34,13 +34,22 @@ The container handles Wine setup, required Windows components, WebView2, Zwift i
 
 ## 🚀 Quick start
 
-### Install
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yaniekcode/zwift.git
+cd zwift
+```
+
+### 2. Install Zwift
 
 ```bash
 ./zwift install
 ```
 
-### Start
+The Docker image is pulled automatically from Docker Hub and Zwift is installed into a persistent Docker volume.
+
+### 3. Start Zwift
 
 ```bash
 ./zwift start
@@ -77,6 +86,7 @@ Open **http://localhost:6080** in your browser.
 ```bash
 ./zwift shell
 ```
+
 
 ## 🎮 GPU
 
