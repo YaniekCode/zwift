@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-IMAGE="zwift:latest"
+IMAGE="yaniekcode/zwift:latest"
 CONTAINER="zwift"
 VOLUME="zwift-data"
 
@@ -54,10 +54,13 @@ build() {
 }
 
 install() {
-    build
+	echo "[+] Pulling Zwift image..."
+	docker pull "${IMAGE}" 2>/dev/null || true
 
+	echo "[+] Removing old container..."
     docker rm -f "${CONTAINER}" 2>/dev/null || true
 
+	echo "[+] Installing Zwift..."
     docker run \
         $(docker_run_args) \
         "${IMAGE}" \
@@ -71,6 +74,8 @@ start() {
     fi
 
     docker start "${CONTAINER}" 2>/dev/null || \
+
+	echo "[+] Creating Zwift container..."
     docker run \
         $(docker_run_args) \
         "${IMAGE}"
@@ -105,7 +110,11 @@ shell() {
 }
 
 remove() {
+	echo "[+] Removing Zwift container..."
     docker rm -f "${CONTAINER}" 2>/dev/null || true
+
+	echo "[+] Zwift data volume was preserved."
+    echo "    Volume: ${VOLUME}"
 }
 
 case "${1:-}" in

@@ -16,6 +16,22 @@ The container handles Wine setup, required Windows components, WebView2, Zwift i
 * 💾 Persistent Wine & Zwift data
 * 🔄 Simple CLI management
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/game.png" alt="Zwift" width="49%">
+  <img src="screenshots/game2.png" alt="Zwift" width="49%">
+</p>
+
+<p align="center">
+  <img src="screenshots/welcome.png" alt="Zwift welcome screen" width="49%">
+  <img src="screenshots/paired_devices.png" alt="Paired devices" width="49%">
+</p>
+
+<p align="center">
+  <img src="screenshots/ride_on.png" alt="Ride On" width="49%">
+</p>
+
 ## 🚀 Quick start
 
 ### Build
