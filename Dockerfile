@@ -85,6 +85,11 @@ RUN dpkg --add-architecture i386 \
 		mesa-vulkan-drivers \
 		vulkan-tools \
 		\
+		# Sound / Pulseaudio
+		pulseaudio \
+		pulseaudio-utils \
+		libasound2-plugins \
+		\
 	&& rm -rf /var/lib/apt/lists/*
 
 #===================================================
@@ -165,6 +170,9 @@ COPY --from=build-runfromprocess \
 COPY --chmod=755 entrypoint.sh /usr/local/bin/entrypoint.sh
 COPY --chmod=755 update_zwift.sh /usr/local/bin/update_zwift.sh
 COPY --chmod=755 run_zwift.sh /usr/local/bin/run_zwift.sh
+
+# Configure audio driver
+COPY pulse-client.conf /etc/pulse/client.conf
 
 USER zwift
 

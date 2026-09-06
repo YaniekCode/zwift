@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Runs the existing Zwift Docker container
+echo "Installing Zwift in a Docker container"
+# Installs Zwift in a Docker container
 docker run --rm -d \
 	--device=/dev/dri:/dev/dri \
 	--privileged \
@@ -8,4 +9,5 @@ docker run --rm -d \
 	-v zwift-data:/home/zwift \
 	-v /run/user/1000/pulse:/run/user/1000/pulse \
 	--name zwift \
-	zwift
+	zwift \
+	--install
